@@ -35,3 +35,27 @@ greet();
 
 const greetFriend = friend => console.log(friend);
 greetFriend("Austin");
+
+// default parameters
+console.log("Default Parameters");
+const countdown = (start: number = 10): void => {
+    while (start > 0) {
+        start --;
+    }
+    console.log("Done!", start)
+};
+countdown(); // without entering a parameter it defaults to 10,
+            // otherwise it will use the number entered into the function
+
+// spread and spread operators
+console.log("REST and SPREAD");
+const numbers = [1, 10, 99, -5];
+console.log(Math.max(33, 99, 10, -3));
+// console.log(Math.max(numbers)); //cant do this, errors
+console.log(Math.max(...numbers)); //turns this array into a list of numbers
+
+// rest is kind of the opposite of spread operator
+function makeArray(...args: number[]) {
+    return args;
+}
+console.log(makeArray(1, 2));
