@@ -8,6 +8,7 @@ var variable2 = "Test";
 const maxLevels = 100;
 // maxLevels = 99; //this throws an error, can reassign a constant
 
+
 // block scope
 function reset() {
     // console.log(variable);
@@ -36,6 +37,7 @@ greet();
 const greetFriend = friend => console.log(friend);
 greetFriend("Austin");
 
+
 // default parameters
 console.log("Default Parameters");
 const countdown = (start: number = 10): void => {
@@ -46,6 +48,7 @@ const countdown = (start: number = 10): void => {
 };
 countdown(); // without entering a parameter it defaults to 10,
             // otherwise it will use the number entered into the function
+
 
 // spread and spread operators
 console.log("REST and SPREAD");
@@ -59,3 +62,26 @@ function makeArray(...args: number[]) {
     return args;
 }
 console.log(makeArray(1, 2));
+
+
+// destructuring
+console.log("Destructuring");
+const myHobbies = ["Coooking", "Sports"];
+console.log(myHobbies[0], myHobbies[1]);
+// const hobby1 = myHobbies[0];
+// const hobby2 = myHobbies[1];
+const[hobby1, hobby2] = myHobbies;
+console.log(hobby1, hobby2);
+
+const userData3 = { userName: "Kat", age: 27 };
+const {userName, age} = userData3;
+console.log(userName, age);
+
+
+// template literals
+const userName2 = "Kat";
+// const greeting = "Hello, I'm " + userName2;
+const greeting = ` This is a heading!
+I'm ${userName2}.
+This is cool!`;
+console.log(greeting);
