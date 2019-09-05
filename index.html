@@ -8,9 +8,26 @@
     <title>Learning TypeScript</title>
     <!-- <script src="circleMath.js"></script>
     <script src="rectangleMath.js"></script> -->
-    <script src="app.js"></script>
+    <!-- dont need to import app.js below with system js -->
+    <!-- <script src="app.js"></script> -->
+    <script src="node_modules/systemjs/dist/system.js"></script>
 </head>
 <body>
+    <script>
+        // set our baseURL reference path
+        SystemJS.config({
+            baseURL: '/',
+            // packages: {
+            //     '/': {
+            //         defaultExtension: 'js'
+            //     }
+            // }
+            defaultJSExtensions: true
+        });
+
+        // loads our main js file
+        SystemJS.import('app.js');
+    </script>
 Hello!
 </body>
 </html>
